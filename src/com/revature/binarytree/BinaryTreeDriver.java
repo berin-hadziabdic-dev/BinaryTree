@@ -11,15 +11,26 @@ public class BinaryTreeDriver {
 		Node root = new Node(15);
 		BinaryTree btree = new BinaryTree(root);
 
+		//** Building a rudimentary sorted binary tree
 		btree.insert(root, 12);
 		btree.insert(root, 18);
+		btree.insert(root, 13);
 		btree.insert(root, 14);
+		btree.insert(root, 21);
 		btree.insert(root, 16);
 		btree.insert(root, 5);
-		btree.insert(root, 21);
 		btree.insert(root, 3);
-		
 		printer.printUtil(btree.getRoot(), 0);
+		
+		//** Demonstrating deleten node functionatliy 
+		btree.delete(root, 16);	
+		printer.printUtil(btree.getRoot(), 0);
+		
+		//** Demonstrating inserting a duplicate node value
+		btree.insert(root, 3);
+		printer.printUtil(btree.getRoot(), 0);
+		
+		//** Demonstrating some of the other helper methods
 		System.out.println("size of root: " + btree.getSize(root));
 		System.out.println("root contains 5: " + btree.lookup(root, 5));
 		System.out.println("root contains 25: " + btree.lookup(root, 25));
